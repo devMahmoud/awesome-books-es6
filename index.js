@@ -1,10 +1,6 @@
 import { DateTime } from './modules/luxon.js';
-import { Book } from './modules/book.js';
-import { render } from './modules/render.js';
+import render from './modules/render.js';
 
-const titleInput = document.querySelector('.title-input');
-const authorInput = document.querySelector('.author-input');
-const addBookBtn = document.querySelector('.add-book-btn');
 const bookListLink = document.querySelector('.list-link');
 const addNewBookLink = document.querySelector('.add-book-link');
 const contactInfoLink = document.querySelector('.contact-link');
@@ -37,9 +33,3 @@ contactInfoLink.addEventListener('click', () => {
 });
 
 render();
-
-addBookBtn.addEventListener('click', () => {
-  const book = new Book(titleInput.value, authorInput.value);
-  book.add(book);
-  render();
-});

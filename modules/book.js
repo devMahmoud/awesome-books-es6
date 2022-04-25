@@ -1,22 +1,18 @@
-let booksArr = [];
-
 class Book {
-    constructor(title, author) {
-      this.title = title;
-      this.author = author;
-    }
-  
-    removeBook = (index) => {
-      booksArr.splice(index, 1);
-      localStorage.setItem('books', JSON.stringify(booksArr));
-    }
-  
-    add = (book) => {
-      booksArr.push(book);
-      localStorage.setItem('books', JSON.stringify(booksArr));
-    }
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
+
+  removeBook = (index, bookList) => {
+    bookList.splice(index, 1);
+    localStorage.setItem('books', JSON.stringify(bookList));
+  }
+
+  add = (book, bookList) => {
+    bookList.push(book);
+    localStorage.setItem('books', JSON.stringify(bookList));
+  }
 }
 
-const updateBooksArr = books => booksArr = books;
-
-export { Book, booksArr, updateBooksArr }
+export default Book;
